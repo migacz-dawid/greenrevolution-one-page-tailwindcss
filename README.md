@@ -17,11 +17,11 @@ One-page landing page stworzona w podejściu mobile-first, wykorzystująca Tailw
 ## 📂 Uruchomienie projektu  
 1. Sklonuj repozytorium  
    ```bash  
-git clone https://github.com/migacz-dawid/greenrevolution-one-page-tailwindcss
+git clone https://github.com/migacz-dawid/greenrevolution-one-page-tailwindcss  
 2.	Przejdź do katalogu projektu:  
-cd one-page-tailwindcss
+cd one-page-tailwindcss  
 3.	Zainstaluj zależności:  
-npm install
+npm install  
 4.	Wygeneruj CSS z Tailwind i skopiuj TW-Elements:  
 npm run build:full  
 o	build wygeneruje docs/output.css 
