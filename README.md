@@ -9,7 +9,7 @@ One-page landing page stworzona w podejściu mobile-first, wykorzystująca Tailw
 ## 💻 Technologie  
 • HTML5  
 • Tailwind CSS  
-• TW-Elements
+• TW-Elements  
 • JavaScript (ES6)  
 • SEO, Mobile-First  
 • Flexbox, Grid
