@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GreenRevolution</title>
+  <link rel="icon" type="image/x-icon" href="./img/logo.png">
+
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./output.css">
+  <script src="https://kit.fontawesome.com/72860648f3.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="font-lato">
+
+  <nav class="fixed top-0 left-0 w-full bg-gray-900 text-pure-white  z-40">
+    <div class="wrapper">
+      <div class="container flex justify-between items-center mx-auto py-4 z-40">
+        <!-- Logo -->
+        <a href="#" class="flex items-center md:mx-5 text-2xl font-bold">
+          <img src="./img/logo.png" alt="Logo" class="h-10 mr-2"> GreenRevolution
+        </a>
+
+        <!-- Menu -->
+        <div class="hidden lg:flex space-x-6 px-8 lg:text-lg z-40">
+          <a href="#" class="nav-link-hover ">Home</a>
+          <a href="#about" class="nav-link-hover ">Kim jesteśmy</a>
+          <a href="#actions" class="nav-link-hover ">Nasze działania</a>
+          <a href="#support" class="nav-link-hover ">Jak możesz nas wesprzeć</a>
+          <a href="#contact" class="nav-link-hover ">Kontakt</a>
+        </div>
+
+        <!-- Hamburger Button -->
+        <button id="menu-toggle" class="lg:hidden z-40">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="flex flex-col text-lglg:hidden
+        fixed top-[72px] left-0 w-full text-pure-white bg-gray-800 -translate-y-full opacity-1 
+        transition-all duration-300 ease-in-out
+        z-30 ">
+
+    <a href="#" class="py-3 px-5 hover:bg-green-500 transition-colors duration-300 ">Home</a>
+    <a href="#about" class="py-3 px-5 hover:bg-green-500 transition-colors duration-300 ">Kim jesteśmy</a>
+    <a href="#actions" class="py-3 px-5 hover:bg-green-500 transition-colors duration-300 ">Nasze działania</a>
+    <a href="#support" class="py-3 px-5 hover:bg-green-500 transition-colors duration-300 ">Jak możesz nas wesprzeć</a>
+    <a href="#contact" class="py-3 px-5 hover:bg-green-500 transition-colors duration-300 ">Kontakt</a>
+  </div>
+
+
+  <header
+    class="header heroImages flex flex-col justify-center items-center font-quicksand font-[500] tracking-wide text-pure-white bg-[url('./img/header-img-sm.jpg')] lg:bg-[url('./img/header-img-bg.jpg')] 2xl:bg-[url('./img/header-img-exbg.jpg')]">
+
+    <h1 class="mb-3 sm:mb-5 text-3xl sm:text-5xl z-10">GreenRevolution</h1>
+    <p class="text-1xl sm:text-2xl z-10">Zielona rewolucja zaczyna się od Ciebie!</p>
+    <a href="#contact" class="btn-CTA mt-7 sm:mt-11 sm:text-xl font-[600] tracking-[.1em] z-10">Dołącz do
+      nas!</a>
+  </header>
+
+
+  <section class="aboutus section-padding scroll-mt-16 md:scroll-mt-0 " id="about">
+    <h2 class="section-heading">Kim jesteśmy?</h2>
+
+
+    <div class="wrapper">
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+        <p class="pb-6 md:pb-12 sm:text-xl">
+          <strong>GreenRevolution </strong> to organizacja non-profit, która angażuje się w działania na rzecz
+          ochrony
+          środowiska. Naszym celem jest promowanie zrównoważonego rozwoju, sadzenie drzew i wspieranie inicjatyw
+          ekologicznych, które przyczyniają się do poprawy jakości życia na naszej planecie.
+        </p>
+
+        <img src="./img/aboutus-img-sm.jpg" alt="kobieta trzymająca w rękach sadzonkę drzewa"
+          class="block w-full  lg:h-full lg:object-cover">
+
+        <img src="./img/aboutus-img2-sm.jpg" alt="kobieta trzymająca w rękach sadzonkę drzewa"
+          class="hidden lg:block w-full h-full xl:h-auto object-cover">
+
+        <div class="description my-6 sm:my-12">
+          <h3 class="mb-6 sm:mb-12 text-2xl sm:text-3xl font-bold text-center ">Czym się kierujemy?</h3>
+
+          <p class="mb-6 sm:text-xl">
+            <strong>GreenRevolution </strong>to organizacja, której misją jest inspirowanie i mobilizowanie
+            społeczności do aktywnego działania na rzecz ochrony środowiska. Naszym celem jest zbudowanie
+            przyszłości, w której zrównoważony rozwój będzie fundamentem naszej codzienności. Wierzymy, że
+            zmiana na
+            lepsze zaczyna się od małych kroków, które podejmujemy razem.
+          </p>
+
+          <p class="mb-6 sm:text-xl">
+            Nasze działania opierają się na trzech kluczowych wartościach:
+          </p>
+
+          <ul class="mb-6 sm:text-xl">
+            <li class="py-2"><strong>Szacunek dla natury</strong> – Wierzymy, że życie w zgodzie z naturą jest
+              podstawą naszej przyszłości. Dążymy do przywrócenia równowagi w ekosystemach, które zostały
+              zniszczone przez działalność człowieka.</li>
+            <li class="py-2"><strong>Odpowiedzialność społeczna</strong> – Każdy z nas ma wpływ na otaczający go
+              świat. Dlatego angażujemy ludzi i społeczności w działania na rzecz ochrony środowiska, promując
+              odpowiedzialne postawy w codziennym życiu.</li>
+            <li class="py-2"><strong>Współpraca</strong> – Wierzymy, że tylko poprzez wspólne działanie możemy
+              osiągnąć realne zmiany. Łączymy siły z organizacjami, firmami i jednostkami, które podzielają
+              naszą
+              wizję i chcą działać na rzecz naszej planety.</li>
+          </ul>
+
+          <p class="sm:text-xl">
+            <strong>GreenRevolution</strong> to ruch, który łączy ludzi o podobnych wartościach. Działamy z
+            pasją i
+            wiarą, że każdy ma do odegrania rolę w tworzeniu bardziej zielonej, czystej przyszłości.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section
+    class="hero-img heroImages flex flex-col justify-center items-center font-quicksand font-[500] tracking-wide text-pure-white bg-[url('./img/hero-img-sm.jpg')] lg:bg-[url('./img/hero-img-bg.jpg')] 2xl:bg-[url('./img/hero-img-exbg.jpg')]  bg-fixed">
+    <h2 class="hero-img__title px-10 md:w-3/4 text-2xl sm:text-2xl md:text-3xl lg:text-4xl text-center z-10">Zielona
+      rewolucja zaczyna się od serca –
+      dołącz do nas i wspólnie twórzmy przyszłość, w której każdy oddech jest czystszy.</h2>
+    <a href="#contact" class="hero-img__text btn-CTA mt-9 sm:mt-14 sm:text-xl font-[600] tracking-[.1em]  z-10">Dołącz
+      do
+      nas!</a>
+  </section>
+
+
+  <section class="section-padding bg-gray-100 scroll-mt-16 md:scroll-mt-0 " id="actions">
+    <h2 class="section-heading">Nasze działania</h2>
+
+    <div class="grid grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))] gap-8 max-w-6xl mx-auto">
+      <!-- Card 1: Ecological education-->
+      <div class="relative group  bg-white rounded-lg shadow-lg overflow-hidden ">
+        <img src="./img/actions/actions1.jpg" alt="Grupa dzieci uczy się ekologii" class="w-full h-60 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-bold">Edukacja ekologiczna</h3>
+          <p class="text-gray-700">Zwiększamy świadomość społeczną na temat wpływu naszych działań na planetę...</p>
+        </div>
+        <div
+          class="absolute inset-0 flex flex-col items-center justify-center px-6 bg-green-600 text-pure-white opacity-0 group-hover:opacity-100 transition-opacity duration-700 ">
+          <p>Organizujemy warsztaty, kampanie informacyjne i projekty edukacyjne, które pomagają ludziom lepiej
+            rozumieć, jak mogą dbać o środowisko w swoim codziennym życiu.</p>
+        </div>
+      </div>
+
+      <!-- Card 2: Planting Trees -->
+      <div class="relative group bg-white rounded-lg shadow-lg overflow-hidden">
+        <img src="./img/actions/actions2.jpg" alt="Sadzenie drzew przez parę wolontariuszy"
+          class="w-full h-60 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-bold">Sadzenie drzew</h3>
+          <p class="text-gray-700">Zajmujemy się odbudową zniszczonych ekosystemów poprzez sadzenie drzew...</p>
+        </div>
+        <div
+          class="absolute inset-0 flex flex-col items-center justify-center px-6 bg-green-600 text-pure-white opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+          <p>Dzięki tym działaniom przyczyniamy się do poprawy jakości powietrza, walki z globalnym ociepleniem i
+            tworzenia przestrzeni przyjaznych naturze.</p>
+        </div>
+      </div>
+
+      <!-- Card 3: Recycling and Waste Reduction -->
+      <div class="relative group bg-white rounded-lg shadow-lg overflow-hidden">
+        <img src="./img/actions/actions3.jpg" alt="Kobieta zbiera butelki plastikowe do kosza na odpady plastikowe"
+          class="w-full h-60 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-bold">Recykling i redukcja odpadów</h3>
+          <p class="text-gray-700">Wspieramy inicjatywy związane z recyklingiem oraz minimalizowanie odpadów...</p>
+        </div>
+        <div
+          class="absolute inset-0 flex flex-col items-center justify-center px-6 bg-green-600 text-pure-white opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+          <p>Wierzymy, że każdy z nas ma odpowiedzialność za zmniejszenie zanieczyszczenia środowiska, a recykling jest
+            kluczowym elementem w walce z globalnym kryzysem ekologicznym.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section
+    class="hero-counter heroImages flex flex-col justify-center lg:justify-between items-center  font-quicksand font-[500] tracking-wide text-pure-white bg-[url('./img/hero-img2-sm.jpg')] lg:bg-[url('./img/hero-img2-bg.jpg')] 2xl:bg-[url('./img/hero-img2-exbg.jpg')] !h-auto lg:!h-[100vh]  bg-fixed">
+
+    <h2 class="section-heading pt-12 sm:pt-20 lg:pt-32 z-10">Nasze osiągnięcia</h2>
+
+    <div class="wrapper z-10">
+
+      <div
+        class="counter-boxes md:grid md:grid-cols-2 lg:grid-cols-4 gap-3 pb-10 sm:pb-20 md:py-20 lg:py-12 px-3 md:px-12">
+
+        <div class="counter-box">
+          <div class="counter " data-number="250000">0</div>
+          <p class="counter-text ">Zasadzonych drzew</p>
+        </div>
+
+        <div class="counter-box">
+          <div class="counter " data-number="30000">0</div>
+          <p class="counter-text ">Uczestników nazych szkoleń</p>
+        </div>
+
+        <div class="counter-box">
+          <div class="counter " data-number="500000">0</div>
+          <p class="counter-text ">Zebranych kg plastiku</p>
+        </div>
+
+        <div class="counter-box">
+          <div class="counter" data-number="1123">0</div>
+          <p class="counter-text ">Przeprowadzonych wydarzeń</p>
+        </div>
+
+
+      </div>
+
+    </div>
+  </section>
+
+  <section
+    class="support section-padding py-16 px-6 md:px-12 bg-gradient-to-r from-green-500 to-green-700 text-pure-white scroll-mt-16 md:scroll-mt-0"
+    id="support">
+
+    <h2 class="section-heading">Pomóż nam działać dla planety!</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mx-auto max-w-5xl">
+      <!-- Volunteering -->
+      <div class="flex flex-col items-center text-center p-6 bg-white bg-opacity-10 rounded-2xl ">
+        <div class="mb-4">
+          <svg class="w-16 h-16 text-pure-white" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="-1 -1 26 26" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M12 8c2.21 0 4-1.79 4-4S14.21 0 12 0 8 1.79 8 4s1.79 4 4 4zm0 2c-3.33 0-6 2.69-6 6v2h12v-2c0-3.31-2.67-6-6-6z">
+            </path>
+          </svg>
+
+        </div>
+        <h3 class="mb-4 text-2xl font-bold">Dołącz jako wolontariusz</h3>
+        <p class="mb-6">Razem możemy zdziałać więcej! Pomóż nam sadzić drzewa, organizować wydarzenia i szerzyć wiedzę o
+          ekologii.</p>
+        <a href="#contact"
+          class="px-6 py-3 bg-white text-green-700 font-semibold rounded-full hover:bg-green-200 transition-colors duration-300 ">Zostań
+          wolontariuszem</a>
+      </div>
+
+      <!-- Funding -->
+      <div class="flex flex-col items-center text-center p-6 bg-white bg-opacity-10 rounded-2xl">
+        <div class="mb-4">
+
+          <svg class="w-16 h-16 text-pure-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M12 21C12 21 3 14 3 8a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 6-9 13-9 13z"></path>
+          </svg>
+        </div>
+        <h3 class="mb-4 text-2xl font-bold">Wesprzyj nas finansowo</h3>
+        <p class="mb-6">Twoje wsparcie pozwala nam realizować projekty ekologiczne. Każda wpłata ma znaczenie!</p>
+        <button
+          class="support-close-btn px-6 py-3 bg-white text-green-700 rounded-full font-semibold hover:bg-green-200 transition-colors">Wesprzyj
+          finansowo</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Support Popup -->
+  <div
+    class="support__popup fixed top-0 left-0 flex-col justify-center items-center p-5 w-[100vw] h-[100vh] text-white bg-dark bg-opacity-85 z-50 hidden opacity-0 ">
+    <div class="support__popup-box text-center">
+      <p class="support__popup-box-text pb-9 text-xl md:text-2xl">Za chwilę zostaniesz przekierowany do systemu
+        płatności</p>
+      <button class="support__popup-box-btn btn-CTA ">Zamknij <i class="fa-solid fa-xmark"></i></button>
+    </div>
+  </div>
+
+
+  <section class="carousel pt-8 sm:pt-16 md:pt-20">
+
+    <h2 class="section-heading px-8">Zobacz, co już razem osiągnęliśmy!</h2>
+
+    <div id="carouselExampleCaptions" class="relative" data-twe-carousel-init data-twe-ride="carousel">
+      <!--Carousel indicators-->
+      <div class="absolute bottom-0 left-0 right-0 z-[2] mx-[15%] mb-4 flex list-none justify-center p-0"
+        data-twe-carousel-indicators>
+        <button type="button" data-twe-target="#carouselExampleCaptions" data-twe-slide-to="0" data-twe-carousel-active
+          class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-twe-target="#carouselExampleCaptions" data-twe-slide-to="1"
+          class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
+          aria-label="Slide 2"></button>
+        <button type="button" data-twe-target="#carouselExampleCaptions" data-twe-slide-to="2"
+          class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
+          aria-label="Slide 3"></button>
+        <button type="button" data-twe-target="#carouselExampleCaptions" data-twe-slide-to="3"
+          class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
+          aria-label="Slide 3"></button>
+        <button type="button" data-twe-target="#carouselExampleCaptions" data-twe-slide-to="4"
+          class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
+          aria-label="Slide 3"></button>
+        <button type="button" data-twe-target="#carouselExampleCaptions" data-twe-slide-to="5"
+          class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
+          aria-label="Slide 3"></button>
+      </div>
+
+      <!--Carousel items-->
+      <div class="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
+        <!--First item-->
+        <div
+          class="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+          data-twe-carousel-active data-twe-carousel-item style="backface-visibility: hidden">
+          <img src="./img/carousel/foto1.jpg" class="block md:hidden w-full"
+            alt="dzieci w szkole podstawowej uczą się ekologii" />
+          <img src="./img/carousel/foto1-bg.jpg" class="hidden md:block w-full"
+            alt="dzieci w szkole podstawowej uczą się ekologii" />
+          <div class="absolute inset-x-[15%] bottom-5 py-5 text-center text-pure-white block">
+            <h5 class="text-xl lg:text-2xl py-1 ">Edukacja ekologiczna dzieci</h5>
+            <p class="py-2 lg:text-xl">
+              Przeprowadziliśmy warsztaty ekologiczne w jednej z warszawskich szkół, ucząc najmłodszych troski o
+              planetę.
+            </p>
+          </div>
+        </div>
+        <!--Second item-->
+        <div
+          class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+          data-twe-carousel-item style="backface-visibility: hidden">
+          <img src="./img/carousel/foto2.jpg" class="block md:hidden w-full" alt="Dwoje młodych ludzi sadzi drzewo" />
+          <img src="./img/carousel/foto2-bg.jpg" class="hidden md:block w-full"
+            alt="Dwoje młodych ludzi sadzi drzewo" />
+          <div class="absolute inset-x-[15%] bottom-5 py-5 text-center text-pure-white">
+            <h5 class="text-xl lg:text-2xl py-1">Sadzenie nowych drzew</h5>
+            <p class="py-2 lg:text-xl">
+              Posadziliśmy nowe drzewa w Puszczy Białowieskiej, wspólnie przywracając naturalne siedliska.
+            </p>
+          </div>
+        </div>
+        <!--Third item-->
+        <div
+          class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+          data-twe-carousel-item style="backface-visibility: hidden">
+          <img src="./img/carousel/foto3.jpg" class="block md:hidden w-full"
+            alt="Kobieta zbiera do pojemnika na odpady pute butelki" />
+          <img src="./img/carousel/foto3-bg.jpg" class="hidden md:block w-full"
+            alt="Kobieta zbiera do pojemnika na odpady pute butelki" />
+          <div class="absolute inset-x-[15%] bottom-5 py-5 text-center text-pure-white">
+            <h5 class="text-xl lg:text-2xl py-1">Zbiórka odpadów</h5>
+            <p class="py-2 lg:text-xl">
+              W ramach ogólnopolskiej akcji "Sprzątanie Świata" zebraliśmy odpady z terenów zielonych okolic Krakowa
+            </p>
+          </div>
+        </div>
+        <!--Fourth item-->
+        <div
+          class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+          data-twe-carousel-item style="backface-visibility: hidden">
+          <img src="./img/carousel/foto4.jpg" class="block md:hidden w-full"
+            alt="dzieci uczą się przy stole ekologii na łonie natury" />
+          <img src="./img/carousel/foto4-bg.jpg" class="hidden md:block w-full"
+            alt="dzieci uczą się przy stole ekologii na łonie natury" />
+          <div class="absolute inset-x-[15%] bottom-5 py-5 text-center text-pure-white">
+            <h5 class="text-xl lg:text-2xl py-1">Kolonia ekologiczna</h5>
+            <p class="py-2 lg:text-xl">
+              Zorganizowaliśmy kolonię ekologiczną dla dzieci w malowniczej miejscowości Kazimierz Dolny.
+            </p>
+          </div>
+        </div>
+        <!--Fifth item-->
+        <div
+          class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+          data-twe-carousel-item style="backface-visibility: hidden">
+          <img src="./img/carousel/foto5.jpg" class="block md:hidden w-full" alt="Kobieta podlewa posadzone drzewo" />
+          <img src="./img/carousel/foto5-bg.jpg" class="hidden md:block w-full"
+            alt="Kobieta podlewa posadzone drzewo" />
+          <div class="absolute inset-x-[15%] bottom-5 py-5 text-center text-pure-white">
+            <h5 class="text-xl lg:text-2xl py-1">Dbanie o nowe sadzonki</h5>
+            <p class="py-2 lg:text-xl">
+              Regularnie doglądamy sadzonek posadzonych w Tatrzańskim Parku Narodowym, zapewniając im najlepsze warunki
+              wzrostu.
+            </p>
+          </div>
+        </div>
+        <!--Sixth item-->
+        <div
+          class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+          data-twe-carousel-item style="backface-visibility: hidden">
+          <img src="./img/carousel/foto6.jpg" class="block md:hidden w-full"
+            alt="wolontariusze sprzątają plażę ze śmieci" />
+          <img src="./img/carousel/foto6-bg.jpg" class="hidden md:block w-full"
+            alt="wolontariusze sprzątają plażę ze śmieci" />
+          <div class="absolute inset-x-[15%] bottom-5 py-5 text-center text-pure-white">
+            <h5 class="text-xl lg:text-2xl py-1">Akcja Sprzątanie Świata</h5>
+            <p class="py-2 lg:text-xl">
+              Wspólnie oczyściliśmy okolice jeziora Powidzkiego w ramach akcji "Sprzątanie Świata".
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!--Carousel controls - prev item-->
+      <button
+        class="absolute bottom-0 left-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-pure-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-pure-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-pure-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
+        type="button" data-twe-target="#carouselExampleCaptions" data-twe-slide="prev">
+        <span class="inline-block h-8 w-8 md:h-16 md:w-16">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="h-6 w-6 md:h-12 md:w-12">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+          </svg>
+        </span>
+        <span
+          class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Previous</span>
+      </button>
+      <!--Carousel controls - next item-->
+      <button
+        class="absolute bottom-0 right-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-pure-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-pure-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-pure-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
+        type="button" data-twe-target="#carouselExampleCaptions" data-twe-slide="next">
+        <span class="inline-block h-8 w-8 md:h-16 md:w-16">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="h-6 w-6 md:h-12 md:w-12">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+          </svg>
+        </span>
+        <span
+          class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Next</span>
+      </button>
+    </div>
+
+  </section>
+
+  <section class="section-padding scroll-mt-16 md:scroll-mt-0 " id="contact">
+    <h2 class="section-heading">Kontakt</h2>
+    <div class="max-w-3xl mx-auto bg-gray-50 p-6 shadow-md">
+      <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Name & Surname -->
+        <div class="md:col-span-1">
+          <label for="name" class="block text-gray-700 font-medium">Imię i nazwisko:</label>
+          <input type="text" id="name" class="p-2 w-full border border-gray-300 focus:ring-2 focus:ring-green-500">
+        </div>
+
+        <!-- Email -->
+        <div class="md:col-span-1">
+          <label for="email" class="block text-gray-700 font-medium">Adres e-mail:</label>
+          <input type="email" id="email" class="p-2 w-full border border-gray-300 focus:ring-2 focus:ring-green-500">
+        </div>
+
+        <!-- Text message -->
+        <div class="md:col-span-2">
+          <label for="msg" class="block text-gray-700 font-medium ">Wiadomość:</label>
+          <textarea id="msg"
+            class="p-2 w-full border border-gray-300 focus:ring-2 focus:ring-green-500 resize-none	h-[200px]"></textarea>
+        </div>
+
+        <p class="contact-error md:col-span-2 text-center  text-red-500 "></p>
+        <!-- Checkbox for consent -->
+        <input type="checkbox" id="consent" class="md:col-span-2 mt-1">
+        <div class="md:col-span-2 flex items-start">
+          <label for="consent" class="ml-2 text-sm text-gray-600">
+            <span class="text-red-500 mr-3 text-2xl">*</span> Wyrażam zgodę na przetwarzanie moich danych osobowych
+            przez fundację GreenRevolution z siedzibą w Warszawie, w celu
+            udzielenia odpowiedzi, w tym przedłożenia oferty jeśli o nią pytam. Moje dane osobowe będą
+            przetwarzane do czasu cofnięcia zgody lub przez okres niezbędny do ustalenia, dochodzenia lub
+            obrony roszczeń. Mam prawo dostępu do danych, sprostowania, usunięcia lub ograniczenia
+            przetwarzania, sprzeciwu, wniesienia skargi do organu nadzorczego i do przeniesienia danych.
+            Polityka prywatności.
+          </label>
+        </div>
+        <p class="md:col-span-2 text-center"><span class="text-red-500 mr-3 text-2xl"> * </span> Pole
+          obowiązkowe</p>
+        <!-- Send button -->
+        <div class="md:col-span-2 flex flex-col sm:flex-row justify-end">
+          <button type="submit"
+            class="contact-btn w-full sm:w-auto bg-green-600 text-pure-white px-6 py-2 font-medium hover:bg-green-700 transition-colors duration-300">Wyślij</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+
+
+  <footer class="bg-gray-900 text-pure-white py-8">
+
+    <div class="wrapper">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center mx-auto px-6 md:px-12">
+        <!-- Logo and name -->
+        <div class="flex flex-col items-center justify-center md:items-start">
+          <a href="#">
+            <img src="./img/logo.png" alt="GreenRevolution Logo" class="h-16 mb-4 mx-9">
+            <p class="text-lg font-semibold">GreenRevolution</p>
+          </a>
+        </div>
+
+        <!-- links and social media -->
+        <div class="flex flex-col items-center md:items-end">
+          <nav class="mb-5">
+            <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6">
+              <li class="text-center"><a href="#about" class="nav-link-hover ">Kim jesteśmy</a></li>
+              <li class="text-center"><a href="#actions" class="nav-link-hover ">Nasze działania</a></li>
+              <li class="text-center"><a href="#support" class="nav-link-hover ">Jak możesz nas wesprzeć</a></li>
+              <li class="text-center"><a href="#contact" class="nav-link-hover ">Kontakt</a></li>
+            </ul>
+          </nav>
+
+          <div class="flex space-x-4">
+            <a href="#" target="_blank" rel="noopener noreferrer" class="nav-link-hover "><i
+                class="fab fa-facebook text-2xl"></i></a>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="nav-link-hover "><i
+                class="fab fa-x-twitter text-2xl"></i></a>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="nav-link-hover "><i
+                class="fab fa-youtube text-2xl"></i></a>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="nav-link-hover "><i
+                class="fab fa-instagram text-2xl"></i></a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="text-center mt-12">
+        <a href="https://github.com/migacz-dawid/greenrevolution-one-page-tailwindcss" target="_blank" rel="noopener noreferrer"
+          class="text-lg nav-link-hover "><i class="fab fa-github mr-3"></i>GitHub Repository</a>
+      </div>
+
+      <!-- Copyright -->
+      <div class="mt-6 text-center text-sm text-gray-400">
+        <p class="">&copy; <span class="footer-year"></span> <strong> GreenRevolution. Wszelkie prawa
+            zastrzeżone</strong></p>
+      </div>
+    </div>
+
+  </footer>
+
+  <script type="text/javascript" src="./js/tw-elements.umd.min.js"></script>
+  <script src="./js/script.js"></script>
+
+</body>
+
+</html>

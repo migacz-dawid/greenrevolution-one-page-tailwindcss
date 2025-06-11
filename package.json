@@ -1,0 +1,21 @@
+{
+	"name": "greenrevolution",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"build": "tailwindcss -i ./src/input.css -o ./docs/output.css",
+		"postbuild": "mkdir -p ./docs/js && cp node_modules/tw-elements/dist/js/index.min.js ./docs/js/tw-elements.min.js && cp ./src/scripts.js ./docs/js/scripts.js",
+		"build:full": "npm run build && npm run postbuild",
+		"watch": "tailwindcss -i ./src/input.css -o ./docs/output.css --watch"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"description": "",
+	"devDependencies": {
+		"tailwindcss": "^3.4.17"
+	},
+	"dependencies": {
+		"tw-elements": "^2.0.0"
+	}
+}
