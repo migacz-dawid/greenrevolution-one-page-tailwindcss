@@ -12,7 +12,7 @@ const counterBox = document.querySelector('.counter-boxes')
 //Support popup
 const popup = document.querySelector('.support__popup ')
 const popupBtn = document.querySelector('.support__popup-box-btn')
-const supportCloseBtn = document.querySelector('.support-close-btn')
+const supportOpenBtn = document.querySelector('.support-open-btn ')
 //Contact form
 const msgStatus = document.querySelector('.contact-status')
 const username = document.querySelector('#name')
@@ -33,6 +33,9 @@ const visibilityOptions = {
 const counterObserverOptions = {
 	rootMargin: '-100px',
 }
+
+// Release Focus Trap for support popup
+let releaseFocusTrap = null
 
 //Mobile menu
 const toggleMenu = () => {
@@ -112,8 +115,53 @@ const counterObserver = new IntersectionObserver(handleCounterIntersect, counter
 
 //-------------------------------------------
 //Support POPUP
-const showPopup = () => {
-	popup.classList.toggle('show-popup')
+
+const trapFocus = (modalElement) => {
+  const focusableSelectors = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+  const focusableElements = modalElement.querySelectorAll(focusableSelectors);
+
+  if (!focusableElements.length) return;
+
+  const firstElement = focusableElements[0];
+  const lastElement = focusableElements[focusableElements.length - 1];
+
+  const handleTab = (e) => {
+    if (e.key !== 'Tab') return;
+
+    if (e.shiftKey) {
+      // Shift + Tab
+      if (document.activeElement === firstElement) {
+        e.preventDefault();
+        lastElement.focus();
+      }
+    } else {
+      // Tab
+      if (document.activeElement === lastElement) {
+        e.preventDefault();
+        firstElement.focus();
+      }
+    }
+  };
+
+  modalElement.addEventListener('keydown', handleTab);
+
+  // Zwróć funkcję do usuwania listenera, jeśli chcesz go później wyłączyć
+  return () => modalElement.removeEventListener('keydown', handleTab);
+};
+
+const openPopup = () => {
+	popup.classList.add('show-popup')
+	supportOpenBtn.setAttribute('aria-expanded', 'true')
+	popupBtn.focus()
+	releaseFocusTrap = trapFocus(popup)
+}
+
+const closePopup = () => {
+	popup.classList.remove('show-popup')
+	supportOpenBtn.setAttribute('aria-expanded', 'false')
+	supportOpenBtn.focus()
+
+	if (releaseFocusTrap) releaseFocusTrap()
 }
 
 //-------------------------------------------
@@ -199,10 +247,13 @@ const validateForm = event => {
 
 sectionObserver.observe(heroSection)
 counterObserver.observe(counterBox)
-supportCloseBtn.addEventListener('click', showPopup)
-popupBtn.addEventListener('click', showPopup)
+supportOpenBtn.addEventListener('click', openPopup)
+popupBtn.addEventListener('click', closePopup)
 document.addEventListener('click', handleOutsideClick)
-window.addEventListener('click', e => (e.target === popup ? showPopup() : false))
+window.addEventListener('click', e => {
+	if (e.target === popup) closePopup()
+})
+
 sendBtn.addEventListener('click', e => {
 	e.preventDefault() // Don't send email. Demonstration purposes
 	validateForm(e)

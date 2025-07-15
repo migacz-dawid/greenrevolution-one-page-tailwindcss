@@ -3,10 +3,10 @@
 	"version": "1.0.0",
 	"main": "index.js",
 	"scripts": {
-		"build": "tailwindcss -i ./src/input.css -o ./docs/output.css",
+		"build": "tailwindcss -i ./src/input.css -o ./docs/style.css",
 		"postbuild": "mkdir -p ./docs/js && cp node_modules/tw-elements/dist/js/index.min.js ./docs/js/tw-elements.min.js && cp ./src/scripts.js ./docs/js/scripts.js",
 		"build:full": "npm run build && npm run postbuild",
-		"watch": "tailwindcss -i ./src/input.css -o ./docs/output.css --watch"
+		"watch": "tailwindcss -i ./src/input.css -o ./docs/style.css --watch"
 	},
 	"keywords": [],
 	"author": "",

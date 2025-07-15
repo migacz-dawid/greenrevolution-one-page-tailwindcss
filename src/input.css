@@ -2,68 +2,143 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+	.wrapper {
+		@apply mx-auto w-full max-w-[1200px];
+	}
 
-.wrapper {
-	@apply mx-auto w-full max-w-[1200px];
+	.section-heading {
+		@apply relative mt-4 lg:mt-0 mb-8 sm:mb-12 md:mb-20 lg:mb-32 text-3xl sm:text-4xl lg:text-5xl font-bold font-quicksand uppercase text-center tracking-wide;
+	}
+
+	.section-padding {
+		@apply py-8 sm:py-16 md:py-28 px-8 sm:px-8 md:px-8;
+	}
+
+	.nav-link-hover {
+		@apply hover:text-green-400 transition-colors duration-300;
+	}
+
+	.nav-mobile-link {
+		@apply inline-block w-full py-3 px-5  hover:bg-green-500 transition-colors duration-300;
+	}
+
+	.about-text {
+		@apply mb-6 sm:text-xl;
+	}
+	.about-list-item {
+		@apply py-2;
+	}
+
+	.heroImages {
+		@apply relative bg-cover bg-center w-full h-[100vh];
+	}
+
+	.heroImages::before {
+		content: '';
+		@apply absolute inset-0	 bg-black bg-opacity-50 w-full h-full;
+		z-index: 1;
+	}
+
+	.btn-CTA {
+		@apply py-3 px-6 bg-btn-color rounded-2xl hover:bg-hover-btn transition-colors;
+	}
+
+	.hero-img__title,
+	.hero-img__text {
+		@apply opacity-0 -translate-x-full transition duration-1000;
+	}
+
+	.hero-img__title.visible,
+	.hero-img__text.visible {
+		@apply opacity-100 translate-x-0;
+	}
+
+	/* Action Cards */
+	.action-card {
+		@apply relative bg-white rounded-lg shadow-lg overflow-hidden;
+	}
+
+	.action-card-img {
+		@apply w-full h-60 object-cover;
+	}
+
+	.action-card-content {
+		@apply p-6;
+	}
+
+	.action-card-title {
+		@apply text-xl font-bold;
+	}
+	.action-card-text {
+		@apply text-gray-700;
+	}
+
+	.action-card-overlay {
+		@apply absolute inset-0 flex flex-col items-center justify-center px-6 bg-green-600 text-pure-white opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-700;
+	}
+
+	/* Counter Box */
+	.counter-box {
+		@apply py-5 sm:py-7 md:py-12;
+	}
+
+	.counter {
+		@apply mb-1 text-lg sm:text-2xl  text-center font-bold tracking-wider;
+	}
+
+	.counter-text {
+		@apply sm:text-lg text-center;
+	}
+
+	/* Supports Cards */
+	.support-card {
+		@apply flex flex-col items-center text-center p-6 bg-white bg-opacity-10 rounded-2xl;
+	}
+
+	.support-card-icon-box {
+		@apply mb-4;
+	}
+
+	.support-card-icon {
+		@apply w-16 h-16 text-pure-white;
+	}
+
+	.support-card-title {
+		@apply mb-4 text-2xl font-bold;
+	}
+
+	.support-card-text {
+		@apply mb-6;
+	}
+
+	.support-card-btn {
+		@apply px-6 py-3 bg-white text-green-700 font-semibold rounded-full hover:bg-green-200 transition-colors duration-300;
+	}
+
+	.support-card-btn:focus {
+		@apply outline-none ring-4 ring-green-900;
+	}
+
+	/* Carousel */
+	.carousel img {
+		@apply h-[75vh] lg:h-[100vh] object-cover brightness-50;
+	}
+
+	/* Contanct Form */
+	.form-control {
+		@apply p-2 w-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500;
+	}
+
+	.form-label {
+		@apply block font-medium text-gray-700;
+	}
 }
 
-.section-heading {
-	@apply relative mt-4 lg:mt-0 mb-8 sm:mb-12 md:mb-20 lg:mb-32 text-3xl sm:text-4xl lg:text-5xl font-bold font-quicksand uppercase text-center tracking-wide;
-}
-
-.section-padding {
-	@apply py-8 sm:py-16 md:py-28 px-8 sm:px-8 md:px-8;
-}
-
-.heroImages {
-	@apply relative bg-cover bg-center w-full h-[100vh];
-}
-
-.heroImages::before {
-	content: '';
-	@apply absolute inset-0	 bg-black bg-opacity-50 w-full h-full; 
-	z-index: 1;
-}
-
-.nav-link-hover{
-	@apply hover:text-green-400 transition-colors duration-300;
-}
-
-.btn-CTA {
-	@apply py-3 px-6 bg-btn-color rounded-2xl hover:bg-hover-btn transition-colors;
-}
-
-
-.hero-img__title, .hero-img__text {
-
-	@apply opacity-0 -translate-x-full transition duration-1000
-}
-
-.hero-img__title.visible, .hero-img__text.visible {
-
-	@apply opacity-100 translate-x-0
-}
-
-.show-popup{
+.show-popup {
 	@apply flex animate-show-popup;
 }
 
-.close-popup{
+.close-popup {
 	@apply hidden;
-}
-
-.counter-box{
-    @apply py-5 sm:py-7 md:py-12;
-}
-
-.counter{
-    @apply mb-1 text-lg sm:text-2xl  text-center font-bold tracking-wider;
-}
-
-.counter-text{
-    @apply sm:text-lg text-center ;
-}
-
-.carousel img {
-	@apply h-[75vh] lg:h-[100vh] object-cover brightness-50
 }
