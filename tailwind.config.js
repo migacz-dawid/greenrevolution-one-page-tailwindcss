@@ -11,7 +11,7 @@ module.exports = {
 				 dark: '#2e2e2e',
 				'pure-white': '#fff',
 				'btn-color': '#FF5722',
-				'hover-btn': '#E64A19' 
+				'hover-btn': '#D84315' 
 			},
 			fontFamily: {
 				quicksand: ['Quicksand', 'sans-serif'],

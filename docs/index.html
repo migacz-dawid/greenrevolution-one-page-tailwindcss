@@ -18,7 +18,7 @@
 
   <nav>
 
-    <div class=" fixed top-0 left-0 w-full bg-gray-900 text-pure-white z-50">
+    <div class=" fixed top-0 left-0 w-full text-pure-white bg-gray-900 z-50">
       <div class="wrapper">
         <div class="container flex justify-between items-center mx-auto py-4 z-50">
           <!-- Logo -->
@@ -46,14 +46,10 @@
       </div>
     </div>
 
-
-
-
     <!-- Mobile Menu -->
-    <ul id="mobile-menu" class="flex flex-col text-lg lg:hidden
-        fixed top-[72px] left-0 w-full text-pure-white bg-gray-800 deco list-none -translate-y-full opacity-1 
-        transition-all duration-300 ease-in-out
-        z-40 ">
+    <ul id="mobile-menu" inert aria-hidden="true" class="fixed hidden flex-col top-[72px] left-0 w-full lg:hidden text-lg
+          text-pure-white bg-gray-800 deco list-none -translate-y-full opacity-1 
+        transition-all duration-300 ease-in-out z-40 ">
 
       <li class=" "><a href="#" class="nav-mobile-link">Home</a></li>
       <li class=" "><a href="#about" class="nav-mobile-link">Kim jesteśmy</a></li>
@@ -69,16 +65,15 @@
     class="header heroImages flex flex-col justify-center items-center font-quicksand font-[500] tracking-wide text-pure-white bg-[url('./img/header-img-sm.jpg')] lg:bg-[url('./img/header-img-bg.jpg')] 2xl:bg-[url('./img/header-img-exbg.jpg')]">
 
     <h1 class="mb-3 sm:mb-5 text-3xl sm:text-5xl z-10">GreenRevolution</h1>
-    <p id="header-subtitle" class="text-1xl sm:text-2xl z-10">Zielona rewolucja zaczyna się od Ciebie!</p>
+    <p id="header-subtitle" class="text-xl sm:text-2xl text-center z-10">Zielona rewolucja zaczyna się od Ciebie!</p>
     <a href="#contact" class="btn-CTA mt-7 sm:mt-11 sm:text-xl font-[600] tracking-[.1em] z-10"
       aria-describedby="header-subtitle">Dołącz do
       nas!</a>
   </header>
 
 
-  <section class="aboutus section-padding scroll-mt-16 md:scroll-mt-0 " id="about">
+  <section id="about" class="aboutus section-padding scroll-mt-16 md:scroll-mt-0 ">
     <h2 class="section-heading">Kim jesteśmy?</h2>
-
 
     <div class="wrapper">
 
@@ -154,12 +149,12 @@
   </section>
 
 
-  <section class="section-padding bg-gray-100 scroll-mt-16 md:scroll-mt-0 " id="actions">
+  <section id="actions" class="section-padding bg-gray-100 scroll-mt-16 md:scroll-mt-0 ">
     <h2 class="section-heading">Nasze działania</h2>
 
     <div class="grid grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))] gap-8 max-w-6xl mx-auto">
       <!-- Card 1: Ecological education-->
-      <div class=" group action-card outline-none focus:outline-none " tabindex="0" role="button"
+      <div class="action-card group " tabindex="0" role="button"
         aria-label="Zobacz więcej o Edukacji ekologicznej">
         <img src="./img/actions/actions1.jpg" alt="Grupa dzieci uczy się ekologii" class="action-card-img">
         <div class="action-card-content">
@@ -173,7 +168,7 @@
       </div>
 
       <!-- Card 2: Planting Trees -->
-      <div class=" group action-card outline-none focus:outline-none " tabindex="0" role="button"
+      <div class=" action-card group " tabindex="0" role="button"
         aria-label="Zobacz więcej o Sadzeniu drzew">
         <img src="./img/actions/actions2.jpg" alt="Sadzenie drzew przez parę wolontariuszy" class="action-card-img">
         <div class="action-card-content">
@@ -187,7 +182,7 @@
       </div>
 
       <!-- Card 3: Recycling and Waste Reduction -->
-      <div class=" group action-card outline-none focus:outline-none " tabindex="0" role="button"
+      <div class=" action-card group" tabindex="0" role="button"
         aria-label="Zobacz więcej o Recykling i redukcja odpadów">
         <img src="./img/actions/actions3.jpg" alt="Kobieta zbiera butelki plastikowe do kosza na odpady plastikowe"
           class="action-card-img">
@@ -205,7 +200,7 @@
 
 
   <section
-    class="hero-counter heroImages flex flex-col justify-center lg:justify-between items-center  font-quicksand font-[500] tracking-wide text-pure-white bg-[url('./img/hero-img2-sm.jpg')] lg:bg-[url('./img/hero-img2-bg.jpg')] 2xl:bg-[url('./img/hero-img2-exbg.jpg')] !h-auto lg:!h-[100vh]  bg-fixed">
+    class="hero-counter heroImages flex flex-col justify-center lg:justify-between items-center font-quicksand font-[500] tracking-wide text-pure-white bg-[url('./img/hero-img2-sm.jpg')] lg:bg-[url('./img/hero-img2-bg.jpg')] 2xl:bg-[url('./img/hero-img2-exbg.jpg')] !h-auto lg:!h-[100vh]  bg-fixed">
 
     <h2 class="section-heading pt-12 sm:pt-20 lg:pt-32 z-10">Nasze osiągnięcia</h2>
 
@@ -234,16 +229,14 @@
           <p id="counter-events" class="counter-text">Przeprowadzonych wydarzeń</p>
         </div>
 
-
-
       </div>
 
     </div>
   </section>
 
-  <section
-    class="support section-padding py-16 px-6 md:px-12 bg-gradient-to-r from-green-500 to-green-700 text-pure-white scroll-mt-16 md:scroll-mt-0"
-    id="support">
+  <section  
+    id="support"
+    class="support section-padding py-16 px-6 md:px-12 bg-gradient-to-r from-green-500 to-green-700 text-pure-white scroll-mt-16 md:scroll-mt-0">
 
     <h2 class="section-heading">Pomóż nam działać dla planety!</h2>
 
@@ -290,7 +283,7 @@
 
   <!-- Support Popup -->
   <div id="support-popup" role="dialog" aria-modal="true" aria-labelledby="support-popup-text"
-    class="support__popup fixed top-0 left-0 flex-col justify-center items-center p-5 w-[100vw] h-[100vh] text-white bg-dark bg-opacity-85 z-50 hidden opacity-0">
+    class="support__popup fixed flex-col justify-center items-center top-0 left-0 p-5 w-[100vw] h-[100vh] text-white bg-dark bg-opacity-85 hidden opacity-0 z-50">
 
     <div class="support__popup-box text-center">
       <p id="support-popup-text" class="support__popup-box-text pb-9 text-xl md:text-2xl">
@@ -301,7 +294,6 @@
       </button>
     </div>
   </div>
-
 
 
   <section class="carousel pt-8 sm:pt-16 md:pt-20">
@@ -315,9 +307,9 @@
         <div
           class="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
           data-twe-carousel-active data-twe-carousel-item style="backface-visibility: hidden">
-          <img src="./img/carousel/foto1.jpg" class="block md:hidden w-full"
+          <img src="./img/carousel/foto1.jpg" class="carousel-img-sm "
             alt="dzieci w szkole podstawowej uczą się ekologii" />
-          <img src="./img/carousel/foto1-bg.jpg" class="hidden md:block w-full"
+          <img src="./img/carousel/foto1-bg.jpg" class="carousel-img-xl"
             alt="dzieci w szkole podstawowej uczą się ekologii" />
           <div class="absolute inset-x-[15%] bottom-5 py-5 text-center text-pure-white block">
             <h5 class="text-xl lg:text-2xl py-1 ">Edukacja ekologiczna dzieci</h5>
@@ -331,8 +323,8 @@
         <div
           class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
           data-twe-carousel-item style="backface-visibility: hidden">
-          <img src="./img/carousel/foto2.jpg" class="block md:hidden w-full" alt="Dwoje młodych ludzi sadzi drzewo" />
-          <img src="./img/carousel/foto2-bg.jpg" class="hidden md:block w-full"
+          <img src="./img/carousel/foto2.jpg" class="carousel-img-sm " alt="Dwoje młodych ludzi sadzi drzewo" />
+          <img src="./img/carousel/foto2-bg.jpg" class="carousel-img-xl"
             alt="Dwoje młodych ludzi sadzi drzewo" />
           <div class="absolute inset-x-[15%] bottom-5 py-5 text-center text-pure-white">
             <h5 class="text-xl lg:text-2xl py-1">Sadzenie nowych drzew</h5>
@@ -345,9 +337,9 @@
         <div
           class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
           data-twe-carousel-item style="backface-visibility: hidden">
-          <img src="./img/carousel/foto3.jpg" class="block md:hidden w-full"
+          <img src="./img/carousel/foto3.jpg" class="carousel-img-sm "
             alt="Kobieta zbiera do pojemnika na odpady pute butelki" />
-          <img src="./img/carousel/foto3-bg.jpg" class="hidden md:block w-full"
+          <img src="./img/carousel/foto3-bg.jpg" class="carousel-img-xl"
             alt="Kobieta zbiera do pojemnika na odpady pute butelki" />
           <div class="absolute inset-x-[15%] bottom-5 py-5 text-center text-pure-white">
             <h5 class="text-xl lg:text-2xl py-1">Zbiórka odpadów</h5>
@@ -360,9 +352,9 @@
         <div
           class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
           data-twe-carousel-item style="backface-visibility: hidden">
-          <img src="./img/carousel/foto4.jpg" class="block md:hidden w-full"
+          <img src="./img/carousel/foto4.jpg" class="carousel-img-sm "
             alt="dzieci uczą się przy stole ekologii na łonie natury" />
-          <img src="./img/carousel/foto4-bg.jpg" class="hidden md:block w-full"
+          <img src="./img/carousel/foto4-bg.jpg" class="carousel-img-xl"
             alt="dzieci uczą się przy stole ekologii na łonie natury" />
           <div class="absolute inset-x-[15%] bottom-5 py-5 text-center text-pure-white">
             <h5 class="text-xl lg:text-2xl py-1">Kolonia ekologiczna</h5>
@@ -375,8 +367,8 @@
         <div
           class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
           data-twe-carousel-item style="backface-visibility: hidden">
-          <img src="./img/carousel/foto5.jpg" class="block md:hidden w-full" alt="Kobieta podlewa posadzone drzewo" />
-          <img src="./img/carousel/foto5-bg.jpg" class="hidden md:block w-full"
+          <img src="./img/carousel/foto5.jpg" class="carousel-img-sm " alt="Kobieta podlewa posadzone drzewo" />
+          <img src="./img/carousel/foto5-bg.jpg" class="carousel-img-xl"
             alt="Kobieta podlewa posadzone drzewo" />
           <div class="absolute inset-x-[15%] bottom-5 py-5 text-center text-pure-white">
             <h5 class="text-xl lg:text-2xl py-1">Dbanie o nowe sadzonki</h5>
@@ -390,9 +382,9 @@
         <div
           class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
           data-twe-carousel-item style="backface-visibility: hidden">
-          <img src="./img/carousel/foto6.jpg" class="block md:hidden w-full"
+          <img src="./img/carousel/foto6.jpg" class="carousel-img-sm "
             alt="wolontariusze sprzątają plażę ze śmieci" />
-          <img src="./img/carousel/foto6-bg.jpg" class="hidden md:block w-full"
+          <img src="./img/carousel/foto6-bg.jpg" class="carousel-img-xl"
             alt="wolontariusze sprzątają plażę ze śmieci" />
           <div class="absolute inset-x-[15%] bottom-5 py-5 text-center text-pure-white">
             <h5 class="text-xl lg:text-2xl py-1">Akcja Sprzątanie Świata</h5>
@@ -458,28 +450,28 @@
 
   <section class="section-padding scroll-mt-16 md:scroll-mt-0 " id="contact">
     <h2 class="section-heading">Kontakt</h2>
-    <div class="max-w-3xl mx-auto bg-gray-50 p-6 shadow-md">
+    <div class="p-6 max-w-3xl mx-auto bg-gray-50 shadow-md">
       <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <!-- Name & Surname -->
         <div class="md:col-span-1">
-          <label for="name" class="form-label ">Imię i nazwisko:</label>
-          <input type="text" id="name" name="name" required class="form-control">
+          <label for="name" class="form-label ">Imię i nazwisko:<span aria-hidden="true">*</span></label>
+          <input id="name" type="text" name="name" class="form-control" required>
         </div>
 
         <!-- Email -->
         <div class="md:col-span-1">
-          <label for="email" class="form-label ">Adres e-mail:</label>
-          <input type="email" id="email" name="email" required class="form-control">
+          <label for="email" class="form-label ">Adres e-mail:<span aria-hidden="true">*</span></label>
+          <input id="email" type="email" name="email" class="form-control" required>
         </div>
 
         <!-- Text message -->
         <div class="md:col-span-2">
-          <label for="msg" class="form-label  ">Wiadomość:</label>
-          <textarea id="msg" name="message" required class="form-control resize-none	h-[200px]"></textarea>
+          <label for="msg" class="form-label  ">Wiadomość:<span aria-hidden="true">*</span></label>
+          <textarea id="msg" name="message" class="form-control resize-none	h-[200px]" required></textarea>
         </div>
 
         <!-- Checkbox for consent -->
-        <input type="checkbox" id="consent" name="consent" required class="md:col-span-2 mt-1">
+        <input id="consent" type="checkbox" name="consent" class="md:col-span-2 mt-1" required>
         <div class="md:col-span-2 flex items-start">
           <label for="consent" class="ml-2 text-sm text-gray-600">
             <span class="mr-3 text-2xl last:text-red-500 ">*</span> Wyrażam zgodę na przetwarzanie moich

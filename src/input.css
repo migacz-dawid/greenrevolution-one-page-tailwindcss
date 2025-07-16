@@ -2,13 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@layer base {
+  input:focus,
+  textarea:focus,
+  select:focus {
+    @apply outline outline-2 outline-offset-2 transition-all outline-green-500;
+  }
+
+  a:focus,
+  button:focus {
+    @apply outline outline-4 outline-offset-2 transition-all outline-red-500;
+  }
+}
+
 @layer components {
 	.wrapper {
 		@apply mx-auto w-full max-w-[1200px];
 	}
 
 	.section-heading {
-		@apply relative mt-4 lg:mt-0 mb-8 sm:mb-12 md:mb-20 lg:mb-32 text-3xl sm:text-4xl lg:text-5xl font-bold font-quicksand uppercase text-center tracking-wide;
+		@apply relative mt-4 lg:mt-0 mb-8 sm:mb-12 md:mb-20 lg:mb-32 text-3xl sm:text-4xl lg:text-5xl font-quicksand font-bold  uppercase text-center tracking-wide;
 	}
 
 	.section-padding {
@@ -20,7 +34,7 @@
 	}
 
 	.nav-mobile-link {
-		@apply inline-block w-full py-3 px-5  hover:bg-green-500 transition-colors duration-300;
+		@apply inline-block py-3 px-5 w-full hover:bg-green-500 transition-colors duration-300;
 	}
 
 	.about-text {
@@ -31,32 +45,31 @@
 	}
 
 	.heroImages {
-		@apply relative bg-cover bg-center w-full h-[100vh];
+		@apply relative w-full h-[100vh] bg-cover bg-center;
 	}
 
 	.heroImages::before {
 		content: '';
-		@apply absolute inset-0	 bg-black bg-opacity-50 w-full h-full;
-		z-index: 1;
+		@apply absolute inset-0 w-full h-full bg-black bg-opacity-50 z-10;
 	}
 
 	.btn-CTA {
-		@apply py-3 px-6 bg-btn-color rounded-2xl hover:bg-hover-btn transition-colors;
+		@apply py-3 px-6 rounded-2xl bg-btn-color hover:bg-hover-btn transition-colors;
 	}
 
 	.hero-img__title,
 	.hero-img__text {
-		@apply opacity-0 -translate-x-full transition duration-1000;
+		@apply -translate-x-full opacity-0 transition duration-1000;
 	}
 
 	.hero-img__title.visible,
 	.hero-img__text.visible {
-		@apply opacity-100 translate-x-0;
+		@apply translate-x-0 opacity-100;
 	}
 
 	/* Action Cards */
 	.action-card {
-		@apply relative bg-white rounded-lg shadow-lg overflow-hidden;
+		@apply relative bg-white rounded-lg shadow-lg overflow-hidden outline-none focus:outline-none;
 	}
 
 	.action-card-img {
@@ -84,7 +97,7 @@
 	}
 
 	.counter {
-		@apply mb-1 text-lg sm:text-2xl  text-center font-bold tracking-wider;
+		@apply mb-1 text-lg sm:text-2xl text-center font-bold tracking-wider;
 	}
 
 	.counter-text {
@@ -93,7 +106,7 @@
 
 	/* Supports Cards */
 	.support-card {
-		@apply flex flex-col items-center text-center p-6 bg-white bg-opacity-10 rounded-2xl;
+		@apply flex flex-col items-center p-6 text-center bg-white bg-opacity-10 rounded-2xl;
 	}
 
 	.support-card-icon-box {
@@ -113,7 +126,7 @@
 	}
 
 	.support-card-btn {
-		@apply px-6 py-3 bg-white text-green-700 font-semibold rounded-full hover:bg-green-200 transition-colors duration-300;
+		@apply px-6 py-3 font-semibold rounded-full text-green-700 bg-white hover:bg-green-200 transition-colors duration-300;
 	}
 
 	.support-card-btn:focus {
@@ -121,6 +134,14 @@
 	}
 
 	/* Carousel */
+	.carousel-img-sm {
+		@apply block md:hidden w-full;
+	}
+
+	.carousel-img-xl {
+		@apply hidden md:block w-full;
+	}
+
 	.carousel img {
 		@apply h-[75vh] lg:h-[100vh] object-cover brightness-50;
 	}

@@ -37,20 +37,76 @@ const counterObserverOptions = {
 // Release Focus Trap for support popup
 let releaseFocusTrap = null
 
-//Mobile menu
-const toggleMenu = () => {
-	mobileMenu.classList.toggle('opacity-1')
-	mobileMenu.classList.toggle('-translate-y-full')
-	mobileMenu.classList.toggle('top-[100px]')
+
+// Mobile Menu
+
+// Function for focus trap
+const trapFocusMobile = e => {
+	const focusable = Array.from(menuLinks)
+	const first = focusable[0]
+	const last = focusable[focusable.length - 1]
+
+	if (e.key === 'Tab') {
+		if (e.shiftKey) {
+			if (document.activeElement === first) {
+				e.preventDefault()
+				last.focus()
+			}
+		} else {
+			if (document.activeElement === last) {
+				e.preventDefault()
+				first.focus()
+			}
+		}
+	}
 }
 
-// Clicking on links in the menu (closing)
-menuLinks.forEach(link => {
-	link.addEventListener('click', () => {
+// Function for toggle menu escape
+const handleEscape = (e) => {
+	if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
 		toggleMenu()
-	})
-})
+	}
+}
 
+// Function for toggle menu
+const toggleMenu = () => {
+	if (mobileMenu.classList.contains('hidden')) {
+		// Pokaż menu
+		mobileMenu.classList.remove('hidden')
+		mobileMenu.classList.add('flex')
+		mobileMenu.removeAttribute('inert')
+		mobileMenu.setAttribute('aria-hidden', 'false')
+
+		// Wymuś reflow żeby transition zadziałał
+		void mobileMenu.offsetWidth
+
+		mobileMenu.classList.remove('-translate-y-full')
+		mobileMenu.classList.add('opacity-1')
+		mobileMenu.classList.add('top-[100px]')
+
+		document.addEventListener('keydown', trapFocusMobile)
+		document.addEventListener('keydown', handleEscape)
+		menuLinks[0].focus() // Fokus na pierwszy link
+	} else {
+		// Ukryj animacyjnie
+		mobileMenu.classList.add('-translate-y-full')
+		mobileMenu.classList.remove('opacity-1')
+		mobileMenu.classList.remove('top-[100px]')
+
+		setTimeout(() => {
+			mobileMenu.classList.add('hidden')
+			mobileMenu.classList.remove('flex')
+			menuToggle.focus()
+			mobileMenu.setAttribute('inert', '')
+			mobileMenu.setAttribute('aria-hidden', 'true')
+		}, 300) // czas zgodny z transition
+
+		document.removeEventListener('keydown', trapFocusMobile)
+		document.addEventListener('keydown', handleEscape)
+	}
+}
+
+// Clicking outside the menu
 const handleOutsideClick = event => {
 	const clickedInsideMenu = mobileMenu.contains(event.target)
 	const clickedOnToggle = menuToggle.contains(event.target)
@@ -59,12 +115,6 @@ const handleOutsideClick = event => {
 		toggleMenu()
 	}
 }
-
-// Clicking the hamburger (open/close)
-menuToggle.addEventListener('click', event => {
-	event.stopPropagation() // prevent event bubbling
-	toggleMenu()
-})
 
 //------------------------------------------------------
 // Hero-img animation
@@ -115,39 +165,38 @@ const counterObserver = new IntersectionObserver(handleCounterIntersect, counter
 
 //-------------------------------------------
 //Support POPUP
+const trapFocus = modalElement => {
+	const focusableSelectors = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+	const focusableElements = modalElement.querySelectorAll(focusableSelectors)
 
-const trapFocus = (modalElement) => {
-  const focusableSelectors = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
-  const focusableElements = modalElement.querySelectorAll(focusableSelectors);
+	if (!focusableElements.length) return
 
-  if (!focusableElements.length) return;
+	const firstElement = focusableElements[0]
+	const lastElement = focusableElements[focusableElements.length - 1]
 
-  const firstElement = focusableElements[0];
-  const lastElement = focusableElements[focusableElements.length - 1];
+	const handleTab = e => {
+		if (e.key !== 'Tab') return
 
-  const handleTab = (e) => {
-    if (e.key !== 'Tab') return;
+		if (e.shiftKey) {
+			// Shift + Tab
+			if (document.activeElement === firstElement) {
+				e.preventDefault()
+				lastElement.focus()
+			}
+		} else {
+			// Tab
+			if (document.activeElement === lastElement) {
+				e.preventDefault()
+				firstElement.focus()
+			}
+		}
+	}
 
-    if (e.shiftKey) {
-      // Shift + Tab
-      if (document.activeElement === firstElement) {
-        e.preventDefault();
-        lastElement.focus();
-      }
-    } else {
-      // Tab
-      if (document.activeElement === lastElement) {
-        e.preventDefault();
-        firstElement.focus();
-      }
-    }
-  };
+	modalElement.addEventListener('keydown', handleTab)
 
-  modalElement.addEventListener('keydown', handleTab);
-
-  // Zwróć funkcję do usuwania listenera, jeśli chcesz go później wyłączyć
-  return () => modalElement.removeEventListener('keydown', handleTab);
-};
+	// Zwróć funkcję do usuwania listenera, jeśli chcesz go później wyłączyć
+	return () => modalElement.removeEventListener('keydown', handleTab)
+}
 
 const openPopup = () => {
 	popup.classList.add('show-popup')
@@ -244,6 +293,20 @@ const validateForm = event => {
 
 	sendStatus()
 }
+
+//--------------------------------------------------
+// Clicking on links in the menu (closing)
+menuLinks.forEach(link => {
+	link.addEventListener('click', () => {
+		toggleMenu()
+	})
+})
+
+// Clicking the hamburger (open/close)
+menuToggle.addEventListener('click', event => {
+	event.stopPropagation() // prevent event bubbling
+	toggleMenu()
+})
 
 sectionObserver.observe(heroSection)
 counterObserver.observe(counterBox)
