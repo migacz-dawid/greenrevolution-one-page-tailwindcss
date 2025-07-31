@@ -37,12 +37,10 @@ const counterObserverOptions = {
 // Release Focus Trap for support popup
 let releaseFocusTrap = null
 
-
 // Mobile Menu
-
 // Function for focus trap
 const trapFocusMobile = e => {
-	const focusable = Array.from(menuLinks)
+	const focusable = [menuToggle, ...Array.from(menuLinks)]
 	const first = focusable[0]
 	const last = focusable[focusable.length - 1]
 
@@ -61,24 +59,18 @@ const trapFocusMobile = e => {
 	}
 }
 
-// Function for toggle menu escape
-const handleEscape = (e) => {
-	if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
-		toggleMenu()
-	}
-}
-
 // Function for toggle menu
 const toggleMenu = () => {
 	if (mobileMenu.classList.contains('hidden')) {
-		// Pokaż menu
+		// Menu is open
 		mobileMenu.classList.remove('hidden')
 		mobileMenu.classList.add('flex')
 		mobileMenu.removeAttribute('inert')
 		mobileMenu.setAttribute('aria-hidden', 'false')
+		menuToggle.setAttribute('aria-expanded', 'true')
 
-		// Wymuś reflow żeby transition zadziałał
-		void mobileMenu.offsetWidth
+		// Force reflow
+		// void mobileMenu.offsetWidth
 
 		mobileMenu.classList.remove('-translate-y-full')
 		mobileMenu.classList.add('opacity-1')
@@ -86,12 +78,13 @@ const toggleMenu = () => {
 
 		document.addEventListener('keydown', trapFocusMobile)
 		document.addEventListener('keydown', handleEscape)
-		menuLinks[0].focus() // Fokus na pierwszy link
+		menuToggle.focus()
 	} else {
-		// Ukryj animacyjnie
+		// Menu close
 		mobileMenu.classList.add('-translate-y-full')
 		mobileMenu.classList.remove('opacity-1')
 		mobileMenu.classList.remove('top-[100px]')
+		menuToggle.setAttribute('aria-expanded', 'false')
 
 		setTimeout(() => {
 			mobileMenu.classList.add('hidden')
@@ -99,10 +92,17 @@ const toggleMenu = () => {
 			menuToggle.focus()
 			mobileMenu.setAttribute('inert', '')
 			mobileMenu.setAttribute('aria-hidden', 'true')
-		}, 300) // czas zgodny z transition
+		}, 300)
 
 		document.removeEventListener('keydown', trapFocusMobile)
-		document.addEventListener('keydown', handleEscape)
+		document.removeEventListener('keydown', handleEscape)
+	}
+}
+
+// Function for toggle menu escape
+const handleEscape = e => {
+	if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+		toggleMenu()
 	}
 }
 
@@ -118,7 +118,6 @@ const handleOutsideClick = event => {
 
 //------------------------------------------------------
 // Hero-img animation
-
 // callback for observer
 const handleSectionIntersect = (entries, observer) => {
 	entries.forEach(entry => {
@@ -133,7 +132,6 @@ const sectionObserver = new IntersectionObserver(handleSectionIntersect, visibil
 
 //-------------------------------------------
 // Counter
-
 // callback for IntersectionObserver for counter
 const handleCounterIntersect = (entries, observer) => {
 	const [entry] = entries
@@ -194,7 +192,6 @@ const trapFocus = modalElement => {
 
 	modalElement.addEventListener('keydown', handleTab)
 
-	// Zwróć funkcję do usuwania listenera, jeśli chcesz go później wyłączyć
 	return () => modalElement.removeEventListener('keydown', handleTab)
 }
 
@@ -212,15 +209,6 @@ const closePopup = () => {
 
 	if (releaseFocusTrap) releaseFocusTrap()
 }
-
-//-------------------------------------------
-// Footer Year
-const handleCurrentYear = () => {
-	const year = new Date().getFullYear()
-	footerYear.innerText = year
-}
-
-handleCurrentYear()
 
 //-------------------------------------------
 //Contact Form
@@ -293,8 +281,17 @@ const validateForm = event => {
 
 	sendStatus()
 }
+//-------------------------------------------
+// Footer Year
+const handleCurrentYear = () => {
+	const year = new Date().getFullYear()
+	footerYear.innerText = year
+}
+
+handleCurrentYear()
 
 //--------------------------------------------------
+
 // Clicking on links in the menu (closing)
 menuLinks.forEach(link => {
 	link.addEventListener('click', () => {
@@ -308,16 +305,19 @@ menuToggle.addEventListener('click', event => {
 	toggleMenu()
 })
 
-sectionObserver.observe(heroSection)
-counterObserver.observe(counterBox)
+
 supportOpenBtn.addEventListener('click', openPopup)
 popupBtn.addEventListener('click', closePopup)
-document.addEventListener('click', handleOutsideClick)
-window.addEventListener('click', e => {
-	if (e.target === popup) closePopup()
-})
 
 sendBtn.addEventListener('click', e => {
 	e.preventDefault() // Don't send email. Demonstration purposes
 	validateForm(e)
+})
+
+sectionObserver.observe(heroSection)
+counterObserver.observe(counterBox)
+
+document.addEventListener('click', handleOutsideClick)
+window.addEventListener('click', e => {
+	if (e.target === popup) closePopup()
 })

@@ -4,14 +4,17 @@
 
 
 @layer base {
-  input:focus,
-  textarea:focus,
-  select:focus {
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
     @apply outline outline-2 outline-offset-2 transition-all outline-green-500;
   }
 
-  a:focus,
-  button:focus {
+  button:focus-visible {
+    @apply outline outline-4 outline-offset-2 transition-all outline-green-900;
+  }
+  
+  a:focus-visible {
     @apply outline outline-4 outline-offset-2 transition-all outline-red-500;
   }
 }
@@ -28,7 +31,12 @@
 	.section-padding {
 		@apply py-8 sm:py-16 md:py-28 px-8 sm:px-8 md:px-8;
 	}
+	
+	.btn-CTA {
+		@apply py-3 px-6 rounded-2xl bg-btn-color hover:bg-hover-btn transition-colors duration-300;
+	}
 
+	/* Nav */
 	.nav-link-hover {
 		@apply hover:text-green-400 transition-colors duration-300;
 	}
@@ -37,13 +45,7 @@
 		@apply inline-block py-3 px-5 w-full hover:bg-green-500 transition-colors duration-300;
 	}
 
-	.about-text {
-		@apply mb-6 sm:text-xl;
-	}
-	.about-list-item {
-		@apply py-2;
-	}
-
+	/* Hero-img */
 	.heroImages {
 		@apply relative w-full h-[100vh] bg-cover bg-center;
 	}
@@ -51,10 +53,6 @@
 	.heroImages::before {
 		content: '';
 		@apply absolute inset-0 w-full h-full bg-black bg-opacity-50 z-10;
-	}
-
-	.btn-CTA {
-		@apply py-3 px-6 rounded-2xl bg-btn-color hover:bg-hover-btn transition-colors;
 	}
 
 	.hero-img__title,
@@ -67,9 +65,17 @@
 		@apply translate-x-0 opacity-100;
 	}
 
+	/* About */
+	.about-text {
+		@apply mb-6 sm:text-xl;
+	}
+	.about-list-item {
+		@apply py-2;
+	}
+
 	/* Action Cards */
 	.action-card {
-		@apply relative bg-white rounded-lg shadow-lg overflow-hidden outline-none focus:outline-none;
+		@apply relative bg-white rounded-lg shadow-lg overflow-hidden outline-none focus-visible:ring-4 focus-visible:ring-hover-btn focus:outline-none;
 	}
 
 	.action-card-img {
@@ -88,7 +94,7 @@
 	}
 
 	.action-card-overlay {
-		@apply absolute inset-0 flex flex-col items-center justify-center px-6 bg-green-600 text-pure-white opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-700;
+		@apply absolute flex flex-col items-center justify-center px-6 inset-0 bg-green-600 text-pure-white group-hover:opacity-100 group-focus:opacity-100 opacity-0 transition-opacity duration-700;
 	}
 
 	/* Counter Box */
@@ -126,11 +132,7 @@
 	}
 
 	.support-card-btn {
-		@apply px-6 py-3 font-semibold rounded-full text-green-700 bg-white hover:bg-green-200 transition-colors duration-300;
-	}
-
-	.support-card-btn:focus {
-		@apply outline-none ring-4 ring-green-900;
+		@apply px-6 py-3 font-semibold text-green-700 bg-white hover:bg-green-200 rounded-full transition-colors duration-300 focus-visible:ring-4 focus-visible:ring-hover-btn focus:outline-none;
 	}
 
 	/* Carousel */
@@ -144,6 +146,14 @@
 
 	.carousel img {
 		@apply h-[75vh] lg:h-[100vh] object-cover brightness-50;
+	}
+
+	.carousel-btn {
+		@apply absolute bottom-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-pure-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-pure-white hover:no-underline hover:opacity-90 hover:outline-none focus-visible:ring-4 focus-visible:ring-red-700 focus-visible:ring-opacity-100 focus-visible:outline-none motion-reduce:transition-none;
+	}
+
+	.carousel-svg {
+		@apply h-6 w-6 md:h-12 md:w-12;
 	}
 
 	/* Contanct Form */
