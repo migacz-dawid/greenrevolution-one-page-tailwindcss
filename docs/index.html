@@ -49,8 +49,7 @@
 
     <!-- Mobile Menu -->
     <ul id="mobile-menu"
-      class="fixed hidden flex-col top-[72px] left-0 w-full lg:hidden text-lg text-pure-white bg-gray-800 deco list-none -translate-y-full opacity-1 transition-all duration-300 ease-in-out z-40"
-      inert aria-hidden="true" aria-labelledby="menuToggle">
+      class="fixed hidden flex-col top-[72px] left-0 w-full lg:hidden text-lg text-pure-white bg-gray-800 deco list-none -translate-y-full opacity-1 transition-all duration-300 ease-in-out z-40" aria-hidden="true" aria-label="Menu mobilne">
 
       <li class=" "><a href="#home" class="nav-mobile-link">Home</a></li>
       <li class=" "><a href="#about" class="nav-mobile-link">Kim jesteśmy</a></li>
@@ -151,9 +150,8 @@
     </section>
 
 
-    <section id="actions" class="section-padding bg-gray-100 scroll-mt-16 md:scroll-mt-0"
-      aria-labelledby="actions-heading">
-      <h2 id="actions-heading" class="section-heading">Nasze działania</h2>
+    <section id="actions" class="section-padding bg-gray-100 scroll-mt-16 md:scroll-mt-0">
+      <h2 class="section-heading">Nasze działania</h2>
 
       <div class="grid grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))] gap-8 max-w-6xl mx-auto">
         <!-- Card 1: Ecological education-->
@@ -239,10 +237,9 @@
     </section>
 
     <section id="support"
-      class="support section-padding py-16 px-6 md:px-12 bg-gradient-to-r from-green-500 to-green-700 text-pure-white scroll-mt-16 md:scroll-mt-0"
-      aria-labelledby="support-heading">
+      class="support section-padding py-16 px-6 md:px-12 bg-gradient-to-r from-green-500 to-green-700 text-pure-white scroll-mt-16 md:scroll-mt-0">
 
-      <h2 id="support-heading" class="section-heading">Pomóż nam działać dla planety!</h2>
+      <h2 class="section-heading">Pomóż nam działać dla planety!</h2>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mx-auto max-w-5xl">
         <!-- Volunteering -->
@@ -260,7 +257,8 @@
           <p class="support-card-text">Razem możemy zdziałać więcej! Pomóż nam sadzić drzewa, organizować wydarzenia i
             szerzyć wiedzę o
             ekologii.</p>
-          <a href="#contact" class="support-card-btn " aria-label="Zostań wolontariuszem – przejdź do formularza kontaktowego">Zostań wolontariuszem</a>
+          <a href="#contact" class="support-card-btn "
+            aria-label="Zostań wolontariuszem – przejdź do formularza kontaktowego">Zostań wolontariuszem</a>
         </div>
 
         <!-- Funding -->
@@ -294,15 +292,19 @@
           Za chwilę zostaniesz przekierowany do systemu płatności
         </p>
         <button type="button" class="support__popup-box-btn btn-CTA">
-          Zamknij <i class="fa-solid fa-xmark"></i>
+          Zamknij <i class="fa-solid fa-xmark" aria-hidden="true"></i>
         </button>
       </div>
     </div>
 
 
-    <section class="carousel pt-8 sm:pt-16 md:pt-20" aria-labelledby="carousel-heading">
+    <section class="carousel pt-8 sm:pt-16 md:pt-20" aria-labelledby="carousel-heading"
+      aria-describedby="carousel-description">
 
-      <h2 id="carousel-heading" class="section-heading px-8" >Zobacz, co już razem osiągnęliśmy!</h2>
+      <h2 id="carousel-heading" class="section-heading px-8">Zobacz, co już razem osiągnęliśmy!</h2>
+      <p id="carousel-description" class="sr-only">
+        Karuzela z przykładami realizacji. Użyj strzałek w lewo i prawo, aby nawigować między slajdami.
+      </p>
 
       <div id="carouselExampleCaptions" class="relative" data-twe-carousel-init data-twe-ride="carousel">
         <!--Carousel items-->
@@ -450,33 +452,31 @@
 
     </section>
 
-    <section id="contact" class="section-padding scroll-mt-16 md:scroll-mt-0 " aria-labelledby="contact-heading">
-      <h2 id="contact-heading" class="section-heading">Kontakt</h2>
+    <section id="contact" class="section-padding scroll-mt-16 md:scroll-mt-0 ">
+      <h2 class="section-heading">Kontakt</h2>
       <div class="p-6 max-w-3xl mx-auto bg-gray-50 shadow-md">
         <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <!-- Name & Surname -->
           <div class="md:col-span-1">
             <label for="name" class="form-label ">Imię i nazwisko:<span aria-hidden="true">*</span></label>
-            <input id="name" type="text" name="name" class="form-control" required aria-required="true">
+            <input id="name" type="text" name="name" class="form-control" required>
           </div>
 
           <!-- Email -->
           <div class="md:col-span-1">
             <label for="email" class="form-label ">Adres e-mail:<span aria-hidden="true">*</span></label>
-            <input id="email" type="email" name="email" class="form-control" required aria-required="true">
+            <input id="email" type="email" name="email" class="form-control" required>
           </div>
 
           <!-- Text message -->
           <div class="md:col-span-2">
             <label for="msg" class="form-label  ">Wiadomość:<span aria-hidden="true">*</span></label>
-            <textarea id="msg" name="message" class="form-control resize-none	h-[200px]" required
-              aria-required="true"></textarea>
+            <textarea id="msg" name="message" class="form-control resize-none	h-[200px]" required></textarea>
           </div>
 
           <!-- Checkbox for consent -->
           <div class="flex flex-col items-center md:col-span-2">
-            <input id="consent" type="checkbox" name="consent" class="md:col-span-2 mt-1 w-full cursor-pointer" required
-              aria-required="true">
+            <input id="consent" type="checkbox" name="consent" class="md:col-span-2 mt-1 w-full cursor-pointer" required>
             <label for="consent" class="ml-2 text-sm text-gray-600 cursor-pointer">
               <span class="mr-3 text-2xl last:text-red-500 ">*</span> Wyrażam zgodę na przetwarzanie moich
               danych
@@ -528,16 +528,16 @@
             </ul>
           </nav>
 
-          <div class="flex space-x-4" aria-label="Linki do social media" role="list">
-            <a href="#home" target="_blank" rel="noopener noreferrer" aria-label="Facebook" role="listitem"
-              class="nav-link-hover "><i class="fab fa-facebook text-2xl" aria-hidden="true"></i></a>
-            <a href="#home" target="_blank" rel="noopener noreferrer" aria-label="X" role="listitem"
-              class="nav-link-hover "><i class="fab fa-x-twitter text-2xl" aria-hidden="true"></i></a>
-            <a href="#home" target="_blank" rel="noopener noreferrer" aria-label="Youtube" role="listitem"
-              class="nav-link-hover "><i class="fab fa-youtube text-2xl" aria-hidden="true"></i></a>
-            <a href="#home" target="_blank" rel="noopener noreferrer" aria-label="Instagram" role="listitem"
-              class="nav-link-hover "><i class="fab fa-instagram text-2xl" aria-hidden="true"></i></a>
-          </div>
+          <ul class="flex space-x-4" aria-label="Linki do social media">
+            <li><a href="#home" target="_blank" rel="noopener noreferrer" aria-label="Facebook"
+              class="nav-link-hover "><i class="fab fa-facebook text-2xl" aria-hidden="true"></i></a></li>
+            <li><a href="#home" target="_blank" rel="noopener noreferrer" aria-label="X"
+              class="nav-link-hover "><i class="fab fa-x-twitter text-2xl" aria-hidden="true"></i></a></li>
+            <li><a href="#home" target="_blank" rel="noopener noreferrer" aria-label="Youtube"
+              class="nav-link-hover "><i class="fab fa-youtube text-2xl" aria-hidden="true"></i></a></li>
+            <li><a href="#home" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+              class="nav-link-hover "><i class="fab fa-instagram text-2xl" aria-hidden="true"></i></a></li>
+          </ul>
         </div>
 
       </div>
@@ -551,7 +551,7 @@
 
       <!-- Copyright -->
       <div class="mt-6 text-center text-sm text-gray-400">
-        <p class="">&copy; <span class="footer-year" aria-hidden="true"></span> <strong> GreenRevolution. Wszelkie prawa
+        <p>&copy; <span class="footer-year"></span> <strong> GreenRevolution. Wszelkie prawa
             zastrzeżone</strong></p>
       </div>
     </div>

@@ -65,16 +65,14 @@ const toggleMenu = () => {
 		// Menu is open
 		mobileMenu.classList.remove('hidden')
 		mobileMenu.classList.add('flex')
-		mobileMenu.removeAttribute('inert')
 		mobileMenu.setAttribute('aria-hidden', 'false')
 		menuToggle.setAttribute('aria-expanded', 'true')
 
-		// Force reflow
-		// void mobileMenu.offsetWidth
-
-		mobileMenu.classList.remove('-translate-y-full')
-		mobileMenu.classList.add('opacity-1')
-		mobileMenu.classList.add('top-[100px]')
+		setTimeout(() => {
+			mobileMenu.classList.remove('-translate-y-full')
+			mobileMenu.classList.add('opacity-1')
+			mobileMenu.classList.add('top-[100px]')
+		}, 100)
 
 		document.addEventListener('keydown', trapFocusMobile)
 		document.addEventListener('keydown', handleEscape)
@@ -90,7 +88,6 @@ const toggleMenu = () => {
 			mobileMenu.classList.add('hidden')
 			mobileMenu.classList.remove('flex')
 			menuToggle.focus()
-			mobileMenu.setAttribute('inert', '')
 			mobileMenu.setAttribute('aria-hidden', 'true')
 		}, 300)
 
@@ -124,7 +121,7 @@ const handleSectionIntersect = (entries, observer) => {
 		if (entry.isIntersecting) {
 			title.classList.add('visible')
 			text.classList.add('visible')
-			observer.unobserve(entry.target) // przestań obserwować po pierwszym pojawieniu się
+			observer.unobserve(entry.target) // unobserve after animation
 		}
 	})
 }
@@ -304,7 +301,6 @@ menuToggle.addEventListener('click', event => {
 	event.stopPropagation() // prevent event bubbling
 	toggleMenu()
 })
-
 
 supportOpenBtn.addEventListener('click', openPopup)
 popupBtn.addEventListener('click', closePopup)
