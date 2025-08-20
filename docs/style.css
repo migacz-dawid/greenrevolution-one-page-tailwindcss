@@ -655,22 +655,12 @@ input[type="range"]:active::-webkit-slider-thumb {
 }
 
 input:focus-visible,
-  textarea:focus-visible,
-  select:focus-visible {
+	textarea:focus-visible,
+	select:focus-visible {
   outline-style: solid;
   outline-width: 2px;
   outline-offset: 2px;
   outline-color: #22c55e;
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-button:focus-visible {
-  outline-style: solid;
-  outline-width: 4px;
-  outline-offset: 2px;
-  outline-color: #14532d;
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
@@ -810,6 +800,19 @@ a:focus-visible {
 .btn-CTA:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(216 67 21 / var(--tw-bg-opacity, 1));
+}
+
+.btn-CTA:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.btn-CTA:focus-visible {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(74 222 128 / var(--tw-ring-opacity, 1));
 }
 
 /* Nav */
@@ -1186,6 +1189,50 @@ a:focus-visible {
   }
 }
 
+.carousel-bottom-btn {
+  margin-left: 3px;
+  margin-right: 3px;
+  box-sizing: content-box;
+  height: 3px;
+  width: 30px;
+  flex: 0 1 auto;
+  cursor: pointer;
+  border-width: 0px;
+  border-top-width: 10px;
+  border-bottom-width: 10px;
+  border-style: solid;
+  border-color: transparent;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+  background-clip: padding-box;
+  padding: 0px;
+  text-indent: -999px;
+  opacity: 0.5;
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 600ms;
+  transition-timing-function: cubic-bezier(0.25,0.1,0.25,1.0);
+}
+
+.carousel-bottom-btn:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.carousel-bottom-btn:focus-visible {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(239 68 68 / var(--tw-ring-opacity, 1));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-bottom-btn {
+    transition-property: none;
+  }
+}
+
 .carousel-svg {
   height: 1.5rem;
   width: 1.5rem;
@@ -1223,6 +1270,16 @@ a:focus-visible {
   font-weight: 500;
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity, 1));
+}
+
+.contact-btn:focus-visible {
+  outline-style: solid;
+  outline-width: 4px;
+  outline-offset: 2px;
+  outline-color: #dc2626;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 .sr-only {
@@ -1360,11 +1417,6 @@ a:focus-visible {
   margin-right: 15%;
 }
 
-.mx-\[3px\] {
-  margin-left: 3px;
-  margin-right: 3px;
-}
-
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -1435,10 +1487,6 @@ a:focus-visible {
   box-sizing: border-box;
 }
 
-.box-content {
-  box-sizing: content-box;
-}
-
 .\!block {
   display: block !important;
 }
@@ -1499,10 +1547,6 @@ a:focus-visible {
   height: 200px;
 }
 
-.h-\[3px\] {
-  height: 3px;
-}
-
 .h-auto {
   height: auto;
 }
@@ -1533,10 +1577,6 @@ a:focus-visible {
 
 .w-\[100vw\] {
   width: 100vw;
-}
-
-.w-\[30px\] {
-  width: 30px;
 }
 
 .w-auto {
@@ -1577,10 +1617,6 @@ a:focus-visible {
 
 .max-w-full {
   max-width: 100%;
-}
-
-.flex-initial {
-  flex: 0 1 auto;
 }
 
 .shrink-0 {
@@ -1795,15 +1831,6 @@ a:focus-visible {
   border-width: 1px;
 }
 
-.border-0 {
-  border-width: 0px;
-}
-
-.border-y-\[10px\] {
-  border-top-width: 10px;
-  border-bottom-width: 10px;
-}
-
 .border-b-2 {
   border-bottom-width: 2px;
 }
@@ -1842,10 +1869,6 @@ a:focus-visible {
 .border-secondary-500 {
   --tw-border-opacity: 1;
   border-color: rgb(179 185 194 / var(--tw-border-opacity, 1));
-}
-
-.border-transparent {
-  border-color: transparent;
 }
 
 .border-white {
@@ -2069,10 +2092,6 @@ a:focus-visible {
 
 .text-right {
   text-align: right;
-}
-
-.-indent-\[999px\] {
-  text-indent: -999px;
 }
 
 .align-bottom {
@@ -2415,6 +2434,22 @@ a:focus-visible {
 .hover\:bg-green-700:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(21 128 61 / var(--tw-bg-opacity, 1));
+}
+
+.focus\:outline-none:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.focus-visible\:ring-4:focus-visible {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
+.focus-visible\:ring-red-500:focus-visible {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(239 68 68 / var(--tw-ring-opacity, 1));
 }
 
 .data-\[twe-carousel-fade\]\:z-0[data-twe-carousel-fade] {

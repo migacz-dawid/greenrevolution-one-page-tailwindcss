@@ -2,21 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
-  input:focus-visible,
-  textarea:focus-visible,
-  select:focus-visible {
-    @apply outline outline-2 outline-offset-2 transition-all outline-green-500;
-  }
+	input:focus-visible,
+	textarea:focus-visible,
+	select:focus-visible {
+		@apply outline outline-2 outline-offset-2 transition-all outline-green-500;
+	}
 
-  button:focus-visible {
-    @apply outline outline-4 outline-offset-2 transition-all outline-green-900;
-  }
-  
-  a:focus-visible {
-    @apply outline outline-4 outline-offset-2 transition-all outline-red-500;
-  }
+	a:focus-visible {
+		@apply outline outline-4 outline-offset-2 transition-all outline-red-500;
+	}
 }
 
 @layer components {
@@ -31,9 +26,9 @@
 	.section-padding {
 		@apply py-8 sm:py-16 md:py-28 px-8 sm:px-8 md:px-8;
 	}
-	
+
 	.btn-CTA {
-		@apply py-3 px-6 rounded-2xl bg-btn-color hover:bg-hover-btn transition-colors duration-300;
+		@apply py-3 px-6 rounded-2xl bg-btn-color hover:bg-hover-btn transition-colors duration-300 focus-visible:ring-4 focus-visible:ring-green-400 focus:outline-none;
 	}
 
 	/* Nav */
@@ -152,6 +147,10 @@
 		@apply absolute bottom-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-pure-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-pure-white hover:no-underline hover:opacity-90 hover:outline-none focus-visible:ring-4 focus-visible:ring-red-700 focus-visible:ring-opacity-100 focus-visible:outline-none motion-reduce:transition-none;
 	}
 
+	.carousel-bottom-btn {
+		@apply mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px]  opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none focus-visible:ring-4 focus-visible:ring-red-500 focus:outline-none;
+	}
+
 	.carousel-svg {
 		@apply h-6 w-6 md:h-12 md:w-12;
 	}
@@ -163,6 +162,10 @@
 
 	.form-label {
 		@apply block font-medium text-gray-700;
+	}
+
+	.contact-btn:focus-visible {
+		@apply outline outline-4 outline-offset-2 transition-all outline-red-600;
 	}
 }
 
