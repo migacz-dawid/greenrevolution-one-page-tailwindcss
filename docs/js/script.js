@@ -194,6 +194,7 @@ const trapFocus = modalElement => {
 
 const openPopup = () => {
 	popup.classList.add('show-popup')
+	popup.setAttribute('aria-hidden', 'false')
 	supportOpenBtn.setAttribute('aria-expanded', 'true')
 	popupBtn.focus()
 	releaseFocusTrap = trapFocus(popup)
@@ -201,6 +202,7 @@ const openPopup = () => {
 
 const closePopup = () => {
 	popup.classList.remove('show-popup')
+	popup.setAttribute('aria-hidden', 'true')
 	supportOpenBtn.setAttribute('aria-expanded', 'false')
 	supportOpenBtn.focus()
 
