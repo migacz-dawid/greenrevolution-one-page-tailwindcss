@@ -1,7 +1,7 @@
 # 🎨 GreenRevolution One-page Tailwindcss
 
 ## 📝 Opis  
-One-page landing page stworzona w podejściu mobile-first, wykorzystująca Tailwind CSS jako główny framework do responsywnego układu. Sekcje strony (m.in. hero,  footer) zbudowano przy pomocy narzędzi Flexbox i Grid dostępnych w Tailwind. Dodatkowo dodano karuzelę TW-Elements. Projekt został dostosowany do potrzeb klienta, z anonimizacją danych testowych oraz optymalizacją pod kątem SEO. W przeciwieństwie do niektórych poprzednich realizacji, nie zawiera osobnych stron 404 ani polityki prywatności.
+One-page landing page stworzona w podejściu mobile-first, wykorzystująca Tailwind CSS jako główny framework do responsywnego układu. Sekcje strony (m.in. hero,  footer) zbudowano przy pomocy narzędzi Flexbox i Grid dostępnych w Tailwind. Dodatkowo dodano karuzelę TW-Elements. Projekt został dostosowany do potrzeb klienta, z anonimizacją danych testowych oraz optymalizacją pod kątem SEO. W przeciwieństwie do niektórych poprzednich realizacji, nie zawiera osobnych stron 404 ani polityki prywatności. Projekt został stworzony zgodnie z zasadami dostępności **(WCAG 2.1, poziom AA)** oraz najlepszymi praktykami **a11y**.
 
 ## 🔗 Demo  
 👉 [Zobacz stronę na żywo](https://migacz-dawid.github.io/greenrevolution-one-page-tailwindcss/)  
